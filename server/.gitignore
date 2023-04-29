@@ -65,4 +65,4 @@ node_modules/
 # dotenv environment variables file
 .env
 
-social-media-app-840fa-firebase-adminsdk-tobzc-b448fb2ff2.json
+service-account.json
