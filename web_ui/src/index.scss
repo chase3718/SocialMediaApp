@@ -1,0 +1,31 @@
+@mixin dark-theme {
+  --background-color: #383f51;
+  --primary-color: #e6e6fa;
+  --text-color: #ffffff;
+}
+
+@mixin light-theme {
+  --background-color: #e6e6fa;
+  --primary-color: #383f51;
+  --text-color: #000000;
+}
+
+body {
+  @include light-theme();
+  &.is_inverted {
+    @include dark-theme();
+  }
+
+  @media (prefers-color-scheme: dark) {
+    @include dark-theme();
+    &.is_inverted {
+      @include light-theme();
+    }
+  }
+
+  background-color: var(--background-color);
+  color: var(--text-color);
+  a {
+    color: var(--primary-color);
+  }
+}
